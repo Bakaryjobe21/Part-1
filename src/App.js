@@ -40,7 +40,7 @@ import  {React, useState} from "react"
 
      <button onClick={handleBadClick}> bad</button> 
     
-       <Statistic good={good} bad={bad} neutral={neutral}   />
+     <Statistic good={good} bad={bad} neutral={neutral}   />
      
      
 
@@ -55,6 +55,17 @@ const Statistic=({good,neutral,bad})=>{
 
   const average =all/3
   const postive =(good + neutral)/ all *100;
+
+
+  if(good===0 && neutral===0 && bad===0){
+    return(
+      <div>
+        <p>
+          No feedback given
+        </p>
+      </div>
+    )
+  }
   return(
     <div>
     <h1>statistic</h1>
