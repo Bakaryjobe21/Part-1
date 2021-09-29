@@ -8,6 +8,11 @@ import  {React, useState} from "react"
   const [bad, setBad]=useState(0)
   const [neutral, setNeutral]=useState(0)
 
+  const all =good +neutral+ bad
+
+  const average =all/3
+  const postive =(good + neutral)/ all *100;
+
   const handleGoodClick=()=>{
 
     
@@ -42,6 +47,10 @@ import  {React, useState} from "react"
      <p>Good {good} </p>  
      <p>Neutral  {neutral}</p> 
      <p>Bad {bad} </p> 
+
+     <p>All {all} </p>
+     <p>Average {average} </p>
+     <p>Positive {postive} </p>
      
 
     </div>
