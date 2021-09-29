@@ -8,10 +8,7 @@ import  {React, useState} from "react"
   const [bad, setBad]=useState(0)
   const [neutral, setNeutral]=useState(0)
 
-  const all =good +neutral+ bad
-
-  const average =all/3
-  const postive =(good + neutral)/ all *100;
+  
 
   const handleGoodClick=()=>{
 
@@ -42,8 +39,25 @@ import  {React, useState} from "react"
      <button onClick={handleNeutralClick}> neutral</button> 
 
      <button onClick={handleBadClick}> bad</button> 
+    
+       <Statistic good={good} bad={bad} neutral={neutral}   />
+     
+     
 
-     <h1>statistic</h1>
+    </div>
+  )
+
+ 
+}
+
+const Statistic=({good,neutral,bad})=>{
+  const all =good +neutral+ bad
+
+  const average =all/3
+  const postive =(good + neutral)/ all *100;
+  return(
+    <div>
+    <h1>statistic</h1>
      <p>Good {good} </p>  
      <p>Neutral  {neutral}</p> 
      <p>Bad {bad} </p> 
@@ -51,12 +65,8 @@ import  {React, useState} from "react"
      <p>All {all} </p>
      <p>Average {average} </p>
      <p>Positive {postive} </p>
-     
-
-    </div>
+     </div>
   )
-
- 
 }
 
 export default App
