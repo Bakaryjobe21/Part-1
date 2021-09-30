@@ -10,23 +10,7 @@ import  {React, useState} from "react"
 
   
 
-  const handleGoodClick=()=>{
-
-    
-    setGood(6)
-  }
-
-  const handleBadClick=()=>{
-
-    
-    setBad(1)
-  }
-
-  const handleNeutralClick=()=>{
-
-    
-    setNeutral(2)
-  }
+  
 
 
   return(
@@ -34,17 +18,17 @@ import  {React, useState} from "react"
       <h1>give feedback</h1>
 
      
-     <button onClick={handleGoodClick}> good</button> 
+     <Button buttonClicked={()=>setGood(6) } text={"good"}/>
 
-     <button onClick={handleNeutralClick}> neutral</button> 
+     <Button buttonClicked={()=>setNeutral(2) } text={"neutral"}/>
 
-     <button onClick={handleBadClick}> bad</button> 
+     <Button buttonClicked={()=>setBad(1) } text={"bad"}/>
+
+     
     
-     <Statistic good={good} bad={bad} neutral={neutral}   />
+     <Statistic good={good} bad={bad} neutral={neutral}/>
      
-     
-
-    </div>
+     </div>
   )
 
  
@@ -68,16 +52,39 @@ const Statistic=({good,neutral,bad})=>{
   }
   return(
     <div>
-    <h1>statistic</h1>
-     <p>Good {good} </p>  
-     <p>Neutral  {neutral}</p> 
-     <p>Bad {bad} </p> 
+      <h1>statistic</h1>
 
-     <p>All {all} </p>
-     <p>Average {average} </p>
-     <p>Positive {postive} </p>
+      <StatisticLine good={good}  neutral={neutral} bad={bad} all={all} average={average} postive={postive}/>
+
+    
      </div>
   )
+}
+
+const StatisticLine=({good,neutral,bad,all,average,postive})=>{
+
+
+  return(
+    <div>
+      
+     <p>good {good} </p>  
+     <p>neutral {neutral}</p> 
+     <p>bad {bad}</p> 
+
+     <p>all {all} </p>
+     <p>average {average}</p>
+     <p>positive {postive} </p>
+
+
+    </div>
+  )
+}
+
+const Button=({buttonClicked, text})=>{
+  return(
+    <button onClick={buttonClicked}>{text}</button>
+  )
+
 }
 
 export default App
