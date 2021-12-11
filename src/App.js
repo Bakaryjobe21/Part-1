@@ -66,15 +66,31 @@ const StatisticLine=({good,neutral,bad,all,average,postive})=>{
 
   return(
     <div>
+      <table> 
+        <tbody>
+          <tr>
+            <td>good</td> <td>{good}</td>
+          </tr>
+          <tr>
+            <td>neutral</td> <td>{neutral}</td>
+          </tr>
+          <tr>
+            <td>bad</td> <td>{bad}</td>
+          </tr>
+          <tr>
+            <td>all</td> <td>{all}</td>
+          </tr>
+          <tr>
+            <td>average</td> <td>{average}</td>
+          </tr>
+          <tr>
+            <td>positive</td> <td>{postive}</td>
+          </tr>
+        </tbody> 
+        
+        </table>
       
-     <p>good {good} </p>  
-     <p>neutral {neutral}</p> 
-     <p>bad {bad}</p> 
-
-     <p>all {all} </p>
-     <p>average {average}</p>
-     <p>positive {postive} </p>
-
+    
 
     </div>
   )
