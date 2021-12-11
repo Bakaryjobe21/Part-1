@@ -25,11 +25,16 @@ import  {React, useState} from "react"
 
   return (
     <div>
+      <h2>Anectode of the day</h2>
       {anecdotes[selected]} <br/>
       <p>has {points[point]} Votes</p>
 
       <Button buttonClicked={buttonClicked2}  text='Votes'/>
       <Button buttonClicked={buttonClicked}  text='next anecdote'/>
+
+      <h2>Anectode with most votes</h2>
+      {anecdotes[5]} <br/>
+      <p>has {points[5]} Votes</p>
     </div>
   )
 }
