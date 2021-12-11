@@ -1,6 +1,7 @@
 import  {React, useState} from "react"
 
  const App = () => {
+  const points = [1, 4, 6, 3,8,9,7]
 
   const anecdotes = [
     'If it hurts, do it more often',
@@ -13,6 +14,11 @@ import  {React, useState} from "react"
   ]
    
   const [selected, setSelected] = useState(0)
+  const [point,setPoint] =useState(0)
+
+  const buttonClicked2=()=>{
+    setPoint(point +1)
+  }
   const buttonClicked=()=>{
     setSelected(selected +1)
   }
@@ -20,7 +26,9 @@ import  {React, useState} from "react"
   return (
     <div>
       {anecdotes[selected]} <br/>
+      <p>has {points[point]} Votes</p>
 
+      <Button buttonClicked={buttonClicked2}  text='Votes'/>
       <Button buttonClicked={buttonClicked}  text='next anecdote'/>
     </div>
   )
